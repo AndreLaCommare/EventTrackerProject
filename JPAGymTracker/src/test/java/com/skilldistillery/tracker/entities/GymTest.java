@@ -46,5 +46,11 @@ class GymTest {
 		assertEquals("AC4 Fitness", gym.getName());
 		assertEquals("8051234567",gym.getPhoneNumber());
 	}
+	
+	@Test
+	void test_Gym_OneToMany_Member_mapping() {
+		assertNotNull(gym);
+		assertFalse(gym.getMembers().isEmpty());
+	}
 
 }

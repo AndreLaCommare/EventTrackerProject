@@ -46,4 +46,11 @@ class MemberTest {
 		assertEquals("Andre La Commare", member.getName());
 		assertEquals("8054569466",member.getPhoneNumber());
 	}
+	
+	@Test 
+	void test_Member_ManyToOne_Gym_mapping() {
+		assertNotNull(member);
+		assertEquals("AC4 Fitness", member.getGym().getName());
+		
+	}
 }

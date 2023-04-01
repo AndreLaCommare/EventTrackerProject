@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Member {
@@ -19,6 +21,10 @@ public class Member {
 	
 	@Column(name="phone_number")
 	private String phoneNumber;
+	
+	@ManyToOne
+	@JoinColumn(name="gym_id")
+	private Gym gym;
 	
 	public Member() {
 		
@@ -48,6 +54,14 @@ public class Member {
 		this.phoneNumber = phoneNumber;
 	}
 
+	public Gym getGym() {
+		return gym;
+	}
+
+	public void setGym(Gym gym) {
+		this.gym = gym;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -67,7 +81,7 @@ public class Member {
 
 	@Override
 	public String toString() {
-		return "Member [id=" + id + ", name=" + name + ", phoneNumber=" + phoneNumber + "]";
+		return "Member [id=" + id + ", name=" + name + ", phoneNumber=" + phoneNumber + ", gym=" + gym + "]";
 	}
 	
 }
