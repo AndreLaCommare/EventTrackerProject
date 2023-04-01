@@ -7,4 +7,5 @@ import com.skilldistillery.tracker.entities.Member;
 public interface MemberService {
 	List<Member> findAll();
 	Member createMember(Member member, int gymId);
+	Member getById(int memberId);
 }

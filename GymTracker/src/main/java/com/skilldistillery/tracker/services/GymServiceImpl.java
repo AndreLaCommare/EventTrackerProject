@@ -31,4 +31,13 @@ public class GymServiceImpl implements GymService {
 		
 	}
 
+	@Override
+	public Gym createGym(Gym gym) {
+		// TODO Auto-generated method stub
+		if (gym!= null) {
+		gymRepo.saveAndFlush(gym);
+	}
+		return gym;
+
+}
 }

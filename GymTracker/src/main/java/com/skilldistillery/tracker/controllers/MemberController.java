@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.skilldistillery.tracker.entities.Gym;
 import com.skilldistillery.tracker.entities.Member;
 import com.skilldistillery.tracker.services.MemberService;
 
@@ -27,6 +28,18 @@ public class MemberController {
 	List<Member> findAllMembers(){
 		return memberServ.findAll();
 	}
+	@GetMapping("members/{memberId}")
+	Member getById(@PathVariable Integer memberId, HttpServletResponse res){
+		if(memberServ.getById(memberId)== null) {
+			
+			res.setStatus(404);
+		}
+		
+		Member member = memberServ.getById(memberId);
+		
+		return member;
+	}
+	
 	
 	@PostMapping(path="gyms/{gymId}/members")
 	public Member create(@PathVariable Integer gymId, @RequestBody Member member, HttpServletResponse res,HttpServletRequest req) {
