@@ -12,11 +12,11 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class GymTest {
-	
+class MemberTest {
+
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Gym gym;
+	private Member member;
 	
 
 	@BeforeAll
@@ -32,19 +32,18 @@ class GymTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		gym = em.find(Gym.class, 1);
+		member = em.find(Member.class, 1);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
-		gym = null;
+		member = null;
 	}
 
 	@Test
 	void test() {
-		assertNotNull(gym);
-		assertEquals("AC4 Fitness", gym.getName());
-		assertEquals("8051234567",gym.getPhoneNumber());
+		assertNotNull(member);
+		assertEquals("Andre La Commare", member.getName());
+		assertEquals("8054569466",member.getPhoneNumber());
 	}
-
 }

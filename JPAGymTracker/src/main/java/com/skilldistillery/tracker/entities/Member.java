@@ -9,27 +9,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Gym {
+public class Member {
 
-	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
 	private String name;
 	
-	private String address;
 	@Column(name="phone_number")
 	private String phoneNumber;
 	
-	private String state;
-	private String city;
-
-	
-	public Gym() {
+	public Member() {
 		
 	}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -46,36 +40,12 @@ public class Gym {
 		this.name = name;
 	}
 
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
 	}
 
 	@Override
@@ -91,15 +61,13 @@ public class Gym {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Gym other = (Gym) obj;
+		Member other = (Member) obj;
 		return id == other.id;
 	}
 
 	@Override
 	public String toString() {
-		return "Gym [id=" + id + ", name=" + name + ", address=" + address + ", phoneNumber=" + phoneNumber + ", state="
-				+ state + ", city=" + city + "]";
+		return "Member [id=" + id + ", name=" + name + ", phoneNumber=" + phoneNumber + "]";
 	}
-	
 	
 }
