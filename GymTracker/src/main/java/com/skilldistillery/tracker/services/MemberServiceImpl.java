@@ -8,11 +8,14 @@ import org.springframework.stereotype.Service;
 
 import com.skilldistillery.tracker.entities.Gym;
 import com.skilldistillery.tracker.entities.Member;
+import com.skilldistillery.tracker.repositories.GymRepository;
 import com.skilldistillery.tracker.repositories.MemberRepository;
 @Service
 public class MemberServiceImpl implements MemberService {
 	@Autowired
 	MemberRepository memberRepo;
+	@Autowired
+	GymRepository gymRepo;
 	@Override
 	public List<Member> findAll() {
 		// TODO Auto-generated method stub
@@ -21,9 +24,9 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public Member createMember(Member member, int gymId) {
 		// TODO Auto-generated method stub
-		Gym gym = new Gym();
-		gym.setId(gymId);
+		Gym gym = gymRepo.queryById(gymId);
 		member.setGym(gym);
+		System.out.println("***************************************************************************" + member);
 		return memberRepo.saveAndFlush(member);
 	}
 	

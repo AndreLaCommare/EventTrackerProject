@@ -40,4 +40,17 @@ public class GymServiceImpl implements GymService {
 		return gym;
 
 }
+
+	@Override
+	public boolean deleteGymById(int gymId) {
+		// TODO Auto-generated method stub
+		boolean deleted = false;
+		Gym gym = gymRepo.queryById(gymId);
+		if (gym != null) {
+			gymRepo.delete(gym);
+			deleted = true;
+		}
+		
+		return deleted;
+	}
 }

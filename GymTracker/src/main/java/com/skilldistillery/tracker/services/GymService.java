@@ -9,4 +9,5 @@ public interface GymService {
 	List<Gym> findAll();
 	Gym getById(int gymId);
 	Gym createGym(Gym gym);
+	boolean deleteGymById(int gymId);
 }
