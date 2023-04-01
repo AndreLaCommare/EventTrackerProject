@@ -52,5 +52,18 @@ public class MemberServiceImpl implements MemberService {
 		
 		return deleted;
 	}
+	@Override
+	public Member updateMember(Member member, int memberId) {
+		// TODO Auto-generated method stub
+		Member managedMember = memberRepo.getById(memberId);
+		if (managedMember != null) {
+			managedMember.setName(member.getName());
+			managedMember.setPhoneNumber(member.getPhoneNumber());
+			managedMember.setGym(member.getGym());
+		}
+		
+		memberRepo.saveAndFlush(managedMember);
+		return managedMember;
+	}
 
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -75,5 +76,22 @@ public class MemberController {
 			e.printStackTrace();
 			res.setStatus(400);
 		}
+	}
+	
+	@PutMapping(path="members/{memberId}")
+	public Member updateMember(@RequestBody Member member, @PathVariable Integer memberId, HttpServletResponse res,HttpServletRequest req) {
+		Member updatedMember = memberServ.getById(memberId);
+		try {
+			updatedMember = memberServ.updateMember(member, memberId);
+			if (updatedMember == null) {
+				res.setStatus(404);
+			}
+			return updatedMember;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			res.setStatus(400);
+		}
+		return updatedMember;
 	}
 }

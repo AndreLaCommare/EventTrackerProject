@@ -9,4 +9,5 @@ public interface MemberService {
 	Member createMember(Member member, int gymId);
 	Member getById(int memberId);
 	boolean deleteMemberById(int memberId);
+	Member updateMember(Member member, int memberId);
 }
