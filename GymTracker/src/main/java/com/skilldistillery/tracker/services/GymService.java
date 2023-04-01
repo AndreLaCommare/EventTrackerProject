@@ -7,4 +7,5 @@ import com.skilldistillery.tracker.entities.Gym;
 public interface GymService {
 
 	List<Gym> findAll();
+	Gym getById(int gymId);
 }

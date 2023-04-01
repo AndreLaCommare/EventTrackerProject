@@ -6,5 +6,5 @@ import com.skilldistillery.tracker.entities.Gym;
 
 public interface GymRepository extends JpaRepository<Gym, Integer> {
 	
-	Gym getById(int gymId);
+	Gym queryById(int gymId);
 }

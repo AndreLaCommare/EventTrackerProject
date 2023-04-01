@@ -1,6 +1,7 @@
 package com.skilldistillery.tracker.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,17 @@ public class GymServiceImpl implements GymService {
 	public List<Gym> findAll() {
 		// TODO Auto-generated method stub
 		return gymRepo.findAll();
+	}
+
+	@Override
+	public Gym getById(int gymId) {
+		// TODO Auto-generated method stub
+		Optional<Gym> opt= gymRepo.findById(gymId);
+		if (opt != null) {
+			return opt.get();
+		}
+		return null;
+		
 	}
 
 }
