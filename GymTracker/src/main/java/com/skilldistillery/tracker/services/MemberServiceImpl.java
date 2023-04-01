@@ -40,5 +40,17 @@ public class MemberServiceImpl implements MemberService {
 		return null;
 		
 	}
+	@Override
+	public boolean deleteMemberById(int memberId) {
+		// TODO Auto-generated method stub
+		boolean deleted = false;
+		Member member = memberRepo.getById(memberId);
+		if (member != null) {
+			memberRepo.delete(member);
+			deleted = true;
+		}
+		
+		return deleted;
+	}
 
 }

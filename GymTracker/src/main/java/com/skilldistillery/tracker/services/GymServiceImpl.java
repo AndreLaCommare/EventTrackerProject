@@ -53,4 +53,19 @@ public class GymServiceImpl implements GymService {
 		
 		return deleted;
 	}
+
+	@Override
+	public Gym updateGym(Gym gym, int gymId) {
+		// TODO Auto-generated method stub
+		Gym managedGym = gymRepo.queryById(gymId);
+		if (managedGym != null) {
+			managedGym.setAddress(gym.getAddress());
+			managedGym.setPhoneNumber(gym.getPhoneNumber());
+			managedGym.setName(gym.getName());
+			managedGym.setState(gym.getState());
+			managedGym.setCity(gym.getCity());
+		}
+		gymRepo.saveAndFlush(managedGym);
+		return managedGym;
+	}
 }

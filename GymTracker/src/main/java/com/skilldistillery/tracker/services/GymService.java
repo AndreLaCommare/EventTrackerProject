@@ -10,4 +10,5 @@ public interface GymService {
 	Gym getById(int gymId);
 	Gym createGym(Gym gym);
 	boolean deleteGymById(int gymId);
+	Gym updateGym(Gym gym, int gymId);
 }

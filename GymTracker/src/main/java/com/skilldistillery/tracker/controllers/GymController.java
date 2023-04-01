@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -61,7 +62,7 @@ public class GymController {
 	}
 
 	@DeleteMapping("gyms/{gymId}")
-	public void removePostComment(@PathVariable Integer gymId, HttpServletResponse res) {
+	public void removeGym(@PathVariable Integer gymId, HttpServletResponse res) {
 		try {
 			if (gymServ.deleteGymById(gymId)) {
 				
@@ -73,6 +74,23 @@ public class GymController {
 			e.printStackTrace();
 			res.setStatus(400);
 		}
+	}
+	
+	@PutMapping(path="gyms/{gymId}")
+	public Gym updateGym(@RequestBody Gym gym, @PathVariable Integer gymId, HttpServletResponse res,HttpServletRequest req) {
+		Gym updatedGym = gymServ.getById(gymId);
+		try {
+			updatedGym = gymServ.updateGym(gym, gymId);
+			if (updatedGym == null) {
+				res.setStatus(404);
+			}
+			return updatedGym;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			res.setStatus(400);
+		}
+		return updatedGym;
 	}
 
 }
