@@ -12,8 +12,8 @@ This project definitely gave me a familiarity and apprecitation of JPA Repositor
 
 | HTTP Verb | URI                  | Request Body | Response Body |
 |-----------|----------------------|--------------|---------------|
-| GET       | `/api/gyms`      	   |   			  | Collection of representations of all _tacostand_ resources |collection** endpoint |
-| GET		| `/api/members`
+| GET       | `/api/gyms`      	   |   			  | Collection of representations of all _gym_ resources |collection** endpoint |
+| GET		| `/api/members`	   |			  | Collection of representations of all _member_ resources |collection** endpoint |
 | GET       | `/api/tacostands/17`   |              | Representation of _tacostand_ `17` |
 | POST      | `/api/tacostands`      | Representation of a new _tacostand_ resource | Description of the result of the operation | **
 | PUT       | `/api/tacostands/17`   | Representation of a new version of _tacostand_ `17` |
