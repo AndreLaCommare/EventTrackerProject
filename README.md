@@ -20,5 +20,5 @@ This project definitely gave me a familiarity and apprecitation of JPA Repositor
 | POST      | `/api/members`       | Representation of a new _member_ resource 		   | Description of the result of the operation | **
 | PUT       | `/api/gyms/17`   	   | Representation of a new version of _gym_ `17` 	   |
 | PUT       | `/api/members/17`    | Representation of a new version of _member_ `17`  |
-| DELETE    | `/api/gyms/17`   	   | Remove representation of _gym_ `17`               | |
-| DELETE    | `/api/members/17`    | Remove representation of _member_ `17`            | |
+| DELETE    | `/api/gyms/17`   	   |             | |
+| DELETE    | `/api/members/17`    |             | |
