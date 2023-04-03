@@ -19,7 +19,7 @@ import com.skilldistillery.tracker.entities.Gym;
 import com.skilldistillery.tracker.services.GymService;
 
 @RestController
-@RequestMapping("rest")
+@RequestMapping("api")
 public class GymController {
 
 	@Autowired

@@ -20,7 +20,7 @@ import com.skilldistillery.tracker.entities.Member;
 import com.skilldistillery.tracker.services.MemberService;
 
 @RestController
-@RequestMapping("rest")
+@RequestMapping("api")
 public class MemberController {
 
 	@Autowired
