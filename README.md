@@ -12,9 +12,13 @@ This project definitely gave me a familiarity and apprecitation of JPA Repositor
 
 | HTTP Verb | URI                  | Request Body | Response Body |
 |-----------|----------------------|--------------|---------------|
-| GET       | `/api/gyms`      	   |   			  | Collection of representations of all _gym_ resources |collection** endpoint |
+| GET       | `/api/gyms`      	   |   			  | Collection of representations of all _gym_ resources    |collection** endpoint |
 | GET		| `/api/members`	   |			  | Collection of representations of all _member_ resources |collection** endpoint |
-| GET       | `/api/tacostands/17`   |              | Representation of _tacostand_ `17` |
-| POST      | `/api/tacostands`      | Representation of a new _tacostand_ resource | Description of the result of the operation | **
-| PUT       | `/api/tacostands/17`   | Representation of a new version of _tacostand_ `17` |
-| DELETE    | `/api/tacostands/17`   |              | |
+| GET       | `/api/gyms/17`   	   |              | Representation of _gym_ `17` 							|
+| GET       | `/api/members/17`    |              | Representation of _member_ `17` 						|
+| POST      | `/api/gyms`      	   | Representation of a new _gym_ resource 		   | Description of the result of the operation | **
+| POST      | `/api/members`       | Representation of a new _member_ resource 		   | Description of the result of the operation | **
+| PUT       | `/api/gyms/17`   	   | Representation of a new version of _gym_ `17` 	   |
+| PUT       | `/api/members/17`    | Representation of a new version of _member_ `17`  |
+| DELETE    | `/api/gyms/17`   	   | Remove representation of _gym_ `17`               | |
+| DELETE    | `/api/members/17`    | Remove representation of _member_ `17`            | |
