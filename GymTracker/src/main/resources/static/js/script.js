@@ -150,13 +150,20 @@ function displayGym(gym) {
 	dataDiv.appendChild(ul);
 
 	document.getElementById('newGymForm').style.display = 'none';
-	document.getElementById('updateForm').hidden = '';
+	
+	
 
-	//let updateBtn = document.createElement('button');
+	let updateBtn = document.createElement('button');
 	let deleteBtn = document.createElement('button');
 
-	//updateBtn.textContent = "Update Gym";
+	updateBtn.textContent = "Update Gym";
 	deleteBtn.textContent = "Delete Gym";
+	
+	updateBtn.addEventListener('click', function(e){
+		e.preventDefault();
+		updateBtn.hidden = "hidden";
+		document.getElementById('updateForm').hidden = '';
+	})
 
 
 	//<label for="gymName">Name: </label><input type="text" id="updateGymName"  required><br><br>
@@ -166,13 +173,13 @@ function displayGym(gym) {
 	//<label for="gymCity">City: </label><input type="text" id="updateGymCity" ><br><br>
 
 
-	document.getElementById('updateGymName').value = gym.name;
+		document.getElementById('updateGymName').value = gym.name;
 		document.getElementById('updateGymAddress').value = gym.address;
 		document.getElementById('updateGymPhone').value = gym.phoneNumber;
 		document.getElementById('updateGymState').value = gym.state;
 		document.getElementById('updateGymCity').value = gym.city;
 
-	document.getElementById('updateGymBtn').addEventListener('click', function(evt) {
+		document.getElementById('updateGymBtn').addEventListener('click', function(evt) {
 		evt.preventDefault();
 		let xhr = new XMLHttpRequest();
 		
@@ -237,7 +244,7 @@ function displayGym(gym) {
 		xhr.send();
 	})
 
-	//dataDiv.appendChild(updateBtn);
+	dataDiv.appendChild(updateBtn);
 	dataDiv.appendChild(deleteBtn);
 
 
