@@ -10,6 +10,7 @@
  
  
  <class>com.skilldistillery.tracker.entities.Gym</class>
+ <class>com.skilldistillery.tracker.entities.Member</class>
 
 
  

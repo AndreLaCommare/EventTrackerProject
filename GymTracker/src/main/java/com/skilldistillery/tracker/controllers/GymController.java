@@ -32,14 +32,14 @@ public class GymController {
 
 	@GetMapping("gyms/{gymId}")
 	Gym findGymById(@PathVariable Integer gymId, HttpServletResponse res) {
-		System.out.println("In Controller gym Id =" + gymId);
+		
 		if (gymServ.getById(gymId) == null) {
 			System.out.println("Shouldnt arrive here");
 			res.setStatus(404);
 		}
 
 		Gym gym = gymServ.getById(gymId);
-		System.out.println(gym);
+	
 		return gym;
 	}
 
@@ -78,7 +78,9 @@ public class GymController {
 	
 	@PutMapping(path="gyms/{gymId}")
 	public Gym updateGym(@RequestBody Gym gym, @PathVariable Integer gymId, HttpServletResponse res,HttpServletRequest req) {
+		System.out.println("entered put method");
 		Gym updatedGym = gymServ.getById(gymId);
+		System.out.println(updatedGym);
 		try {
 			updatedGym = gymServ.updateGym(gym, gymId);
 			if (updatedGym == null) {

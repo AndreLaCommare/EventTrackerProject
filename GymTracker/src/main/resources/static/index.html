@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Gym Tracker</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+<h1>Welcome to Gym Tracker</h1>
+
+<form name="gymForm">
+    <input type="number" name="gymId">
+    <button name="lookup">Get Gym by Id</button>
+  </form>
+  
+<div id="gymData">
+	<table>
+	<thead>
+	<tr>
+	<th>ID:</th>
+	<th>Gym Name:</th>
+	</tr>
+	</thead>
+	<tbody id="GymListTBody">
+	</tbody>
+	
+	</table>
+
+</div>
+<div id="newGymForm">
+<br><br>
+<h2>Create A Gym!</h2>
+<form name='createGymForm'>
+<label for="gymName">Name: </label><input type="text" id="newGymName" required><br><br>
+<label for="gymAddress">Address: </label><input type="text" id="newGymAddress"><br><br>
+<label for="gymPhone">Phone Number: </label><input type="text" id="newGymPhone"><br><br>
+<label for="gymState">State: </label><input type="text" id="newGymState"><br><br>
+<label for="gymCity">City: </label><input type="text" id="newGymCity"><br><br>
+<button type="submit" id="createGymBtn">Create New Gym!</button>
+
+</form>
+
+
+</div>
+
+<div id="updateForm" hidden="hidden">
+<h2>Update Gym:</h2>
+<form name="updateGymForm">
+<label for="gymName">Name: </label><input type="text" id="updateGymName"  required><br><br>
+<label for="gymAddress">Address: </label><input type="text" id="updateGymAddress" ><br><br>
+<label for="gymPhone">Phone Number: </label><input type="text" id="updateGymPhone" ><br><br>
+<label for="gymState">State: </label><input type="text" id="updateGymState" ><br><br>
+<label for="gymCity">City: </label><input type="text" id="updateGymCity" ><br><br>
+<button type="submit" id="updateGymBtn">Update Gym</button>
+
+
+
+
+
+</form>
+
+</div>
+</body>
+</html>
