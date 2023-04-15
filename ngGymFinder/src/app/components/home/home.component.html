@@ -1,0 +1,103 @@
+<h1>Find A GYM!</h1>
+
+<div id="addGym" *ngIf="!selected">
+  <form name="createGym">
+
+    <!-- name height weight image also pokeId -->
+
+
+    <label for="name">Name</label>
+    <input type="text" name="name"[(ngModel)]="newGym.name"><br><br>
+    <label for="state">State</label>
+    <input type="text" name="state" [(ngModel)]="newGym.state"><br><br>
+    <label for="address">Address</label>
+    <input type="text" name="addr"[(ngModel)]="newGym.address"><br><br>
+    <label for="city" >City</label>
+    <input type="text" name="city"[(ngModel)]="newGym.city"><br><br>
+    <label for="city" >Phone Number</label>
+    <input type="tel" name="number"[(ngModel)]="newGym.phoneNumber"><br><br>
+    <label for="image">Image URL</label>
+    <input type="text" name="img"[(ngModel)]="newGym.imageUrl"><br><br>
+
+    <button  class ="btn btn-primary" (click)="addGym(newGym)">Create Gym!</button><br>
+
+  </form>
+
+
+
+
+  </div>
+
+
+<div *ngIf="selected">
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" [src]="selected.imageUrl" alt="Card image cap">
+    <div class="card-body">
+
+  <h5>ID: {{selected.id}} Name: {{selected.name}}</h5>
+  <p>Address: {{selected.address}}, {{selected.city}}, {{selected.state}}  </p>
+  <h6>Contact: {{selected.phoneNumber}}</h6>
+
+</div>
+</div>
+
+  <button class ="btn btn-primary" (click)="displayTable()">Back</button>
+  <button class ="btn btn-primary" (click)="setEditGym()">Edit</button>
+
+  <!-- <button (click)="setEditTodo()">Edit</button> -->
+
+
+  </div>
+
+  <div id="todoEdit" *ngIf="editGym">
+    <form >
+      <label for="name">Name</label>
+      <input type="text" name="name"[(ngModel)]="editGym.name"><br><br>
+      <label for="state">State</label>
+      <input type="text" name="state" [(ngModel)]="editGym.state"><br><br>
+      <label for="address">Address</label>
+      <input type="text" name="addr"[(ngModel)]="editGym.address"><br><br>
+      <label for="city" >City</label>
+      <input type="text" name="city"[(ngModel)]="editGym.city"><br><br>
+
+      <label for="city" >Phone Number</label>
+      <input type="tel" name="number"[(ngModel)]="editGym.phoneNumber"><br><br>
+      <label for="image">Image URL</label>
+      <input type="text" name="img"[(ngModel)]="editGym.imageUrl"><br><br>
+
+      <button class ="btn btn-primary" (click)="editGym= null">Cancel</button>
+      <button  class ="btn btn-primary" (click)="updateGym(editGym)">Save</button>
+
+    </form>
+      </div>
+
+  <div *ngIf="!selected">
+
+
+    <table class="table table-striped table-hover">
+
+      <thead class="table">
+        <th>ID:</th>
+        <th>Gym:</th>
+
+      </thead>
+      <tbody>
+        <tr *ngFor="let gym of gyms">
+          <td (click)="displayGym(gym)">{{gym.id}}</td>
+          <td (click)="displayGym(gym)"> {{gym.name}}</td>
+          <td>
+            <img [src]="gym.imageUrl" width="96" height="96"/>
+          </td>
+          <td> <button class="btn-close" (click)="deleteGym(gym.id)"></button></td>
+
+
+          <!-- <td> <button (click)="deleteGym(gym.id)">X</button></td>  -->
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
