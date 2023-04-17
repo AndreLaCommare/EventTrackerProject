@@ -28,6 +28,8 @@ public class Gym {
 	
 	private String state;
 	private String city;
+	@Column(name="img_url")
+	private String imageUrl;
 	@JsonIgnore
 	@OneToMany(mappedBy="gym")
 	private List<Member> members;
@@ -92,6 +94,14 @@ public class Gym {
 		this.members = members;
 	}
 
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -112,7 +122,7 @@ public class Gym {
 	@Override
 	public String toString() {
 		return "Gym [id=" + id + ", name=" + name + ", address=" + address + ", phoneNumber=" + phoneNumber + ", state="
-				+ state + ", city=" + city + "]";
+				+ state + ", city=" + city + ", imageUrl=" + imageUrl + "]";
 	}
 	
 	

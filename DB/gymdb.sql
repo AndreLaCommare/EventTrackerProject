@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS `gym` (
   `phone_number` VARCHAR(45) NULL,
   `state` VARCHAR(45) NULL,
   `city` VARCHAR(45) NULL,
+  `img_url` VARCHAR(2000) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -66,8 +67,8 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `gymdb`;
-INSERT INTO `gym` (`id`, `name`, `address`, `phone_number`, `state`, `city`) VALUES (1, 'AC4 Fitness', '52 N. Fairveiw Avenue', '8051234567', 'CA', 'Santa Barbara');
-INSERT INTO `gym` (`id`, `name`, `address`, `phone_number`, `state`, `city`) VALUES (2, 'Transition Jiu Jitsu', '1058 Hollister Avenue', '8056895791', 'CA', 'Santa Barbara');
+INSERT INTO `gym` (`id`, `name`, `address`, `phone_number`, `state`, `city`, `img_url`) VALUES (1, 'AC4 Fitness', '52 N. Fairveiw Avenue', '8051234567', 'CA', 'Santa Barbara', 'https://www.ac4fitness.com/wp-content/uploads/2019/11/Logo-for-Header-2.png');
+INSERT INTO `gym` (`id`, `name`, `address`, `phone_number`, `state`, `city`, `img_url`) VALUES (2, 'Transition Jiu Jitsu', '1058 Hollister Avenue', '8056895791', 'CA', 'Santa Barbara', 'https://static.wixstatic.com/media/0dfff6_5581a33802084348bbfd37695821a202~mv2.png');
 
 COMMIT;
 
